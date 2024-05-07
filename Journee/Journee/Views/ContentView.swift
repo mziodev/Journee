@@ -12,12 +12,9 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(journee, id: \.creationDate) { log in
-                    Text(
-                        log.creationDate.formatted(
-                            date: .abbreviated,
-                            time: .omitted
-                        )
-                    )
+                    NavigationLink(destination: Text(log.content)) {
+                        LogRowView(log: log)
+                    }
                 }
             }
             .navigationTitle("Journee")
