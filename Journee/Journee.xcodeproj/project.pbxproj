@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		089051E62BD9259000C5F6E2 /* JourneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089051E52BD9259000C5F6E2 /* JourneeApp.swift */; };
-		089051E82BD9259000C5F6E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089051E72BD9259000C5F6E2 /* ContentView.swift */; };
-		089051EA2BD9259200C5F6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089051E92BD9259200C5F6E2 /* Assets.xcassets */; };
-		089051ED2BD9259200C5F6E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089051EC2BD9259200C5F6E2 /* Preview Assets.xcassets */; };
+		0824409F2BEA389F00842E87 /* JourneeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0824409E2BEA389F00842E87 /* JourneeApp.swift */; };
+		082440A12BEA389F00842E87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082440A02BEA389F00842E87 /* ContentView.swift */; };
+		082440A32BEA38A100842E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082440A22BEA38A100842E87 /* Assets.xcassets */; };
+		082440A62BEA38A100842E87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082440A52BEA38A100842E87 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		089051E22BD9259000C5F6E2 /* Journee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journee.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		089051E52BD9259000C5F6E2 /* JourneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneeApp.swift; sourceTree = "<group>"; };
-		089051E72BD9259000C5F6E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		089051E92BD9259200C5F6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		089051EC2BD9259200C5F6E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0824409B2BEA389F00842E87 /* Journee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0824409E2BEA389F00842E87 /* JourneeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneeApp.swift; sourceTree = "<group>"; };
+		082440A02BEA389F00842E87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		082440A22BEA38A100842E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		082440A52BEA38A100842E87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		089051DF2BD9259000C5F6E2 /* Frameworks */ = {
+		082440982BEA389F00842E87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,51 +32,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089051D92BD9259000C5F6E2 = {
+		082440922BEA389F00842E87 = {
 			isa = PBXGroup;
 			children = (
-				089051E42BD9259000C5F6E2 /* Journee */,
-				089051E32BD9259000C5F6E2 /* Products */,
+				0824409D2BEA389F00842E87 /* Journee */,
+				0824409C2BEA389F00842E87 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		089051E32BD9259000C5F6E2 /* Products */ = {
+		0824409C2BEA389F00842E87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				089051E22BD9259000C5F6E2 /* Journee.app */,
+				0824409B2BEA389F00842E87 /* Journee.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		089051E42BD9259000C5F6E2 /* Journee */ = {
+		0824409D2BEA389F00842E87 /* Journee */ = {
 			isa = PBXGroup;
 			children = (
-				089051E52BD9259000C5F6E2 /* JourneeApp.swift */,
-				089051E72BD9259000C5F6E2 /* ContentView.swift */,
-				089051E92BD9259200C5F6E2 /* Assets.xcassets */,
-				089051EB2BD9259200C5F6E2 /* Preview Content */,
+				082440AC2BEA38CA00842E87 /* App */,
+				082440AD2BEA38D400842E87 /* Views */,
+				082440A22BEA38A100842E87 /* Assets.xcassets */,
+				082440A42BEA38A100842E87 /* Preview Content */,
 			);
 			path = Journee;
 			sourceTree = "<group>";
 		};
-		089051EB2BD9259200C5F6E2 /* Preview Content */ = {
+		082440A42BEA38A100842E87 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				089051EC2BD9259200C5F6E2 /* Preview Assets.xcassets */,
+				082440A52BEA38A100842E87 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		082440AC2BEA38CA00842E87 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0824409E2BEA389F00842E87 /* JourneeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		082440AD2BEA38D400842E87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				082440A02BEA389F00842E87 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		089051E12BD9259000C5F6E2 /* Journee */ = {
+		0824409A2BEA389F00842E87 /* Journee */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 089051F02BD9259200C5F6E2 /* Build configuration list for PBXNativeTarget "Journee" */;
+			buildConfigurationList = 082440A92BEA38A100842E87 /* Build configuration list for PBXNativeTarget "Journee" */;
 			buildPhases = (
-				089051DE2BD9259000C5F6E2 /* Sources */,
-				089051DF2BD9259000C5F6E2 /* Frameworks */,
-				089051E02BD9259000C5F6E2 /* Resources */,
+				082440972BEA389F00842E87 /* Sources */,
+				082440982BEA389F00842E87 /* Frameworks */,
+				082440992BEA389F00842E87 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +100,25 @@
 			);
 			name = Journee;
 			productName = Journee;
-			productReference = 089051E22BD9259000C5F6E2 /* Journee.app */;
+			productReference = 0824409B2BEA389F00842E87 /* Journee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		089051DA2BD9259000C5F6E2 /* Project object */ = {
+		082440932BEA389F00842E87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					089051E12BD9259000C5F6E2 = {
+					0824409A2BEA389F00842E87 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 089051DD2BD9259000C5F6E2 /* Build configuration list for PBXProject "Journee" */;
+			buildConfigurationList = 082440962BEA389F00842E87 /* Build configuration list for PBXProject "Journee" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +126,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 089051D92BD9259000C5F6E2;
-			productRefGroup = 089051E32BD9259000C5F6E2 /* Products */;
+			mainGroup = 082440922BEA389F00842E87;
+			productRefGroup = 0824409C2BEA389F00842E87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				089051E12BD9259000C5F6E2 /* Journee */,
+				0824409A2BEA389F00842E87 /* Journee */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		089051E02BD9259000C5F6E2 /* Resources */ = {
+		082440992BEA389F00842E87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				089051ED2BD9259200C5F6E2 /* Preview Assets.xcassets in Resources */,
-				089051EA2BD9259200C5F6E2 /* Assets.xcassets in Resources */,
+				082440A62BEA38A100842E87 /* Preview Assets.xcassets in Resources */,
+				082440A32BEA38A100842E87 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		089051DE2BD9259000C5F6E2 /* Sources */ = {
+		082440972BEA389F00842E87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				089051E82BD9259000C5F6E2 /* ContentView.swift in Sources */,
-				089051E62BD9259000C5F6E2 /* JourneeApp.swift in Sources */,
+				082440A12BEA389F00842E87 /* ContentView.swift in Sources */,
+				0824409F2BEA389F00842E87 /* JourneeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		089051EE2BD9259200C5F6E2 /* Debug */ = {
+		082440A72BEA38A100842E87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		089051EF2BD9259200C5F6E2 /* Release */ = {
+		082440A82BEA38A100842E87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +280,7 @@
 			};
 			name = Release;
 		};
-		089051F12BD9259200C5F6E2 /* Debug */ = {
+		082440AA2BEA38A100842E87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -272,7 +288,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Journee/Preview Content\"";
-				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -293,7 +308,7 @@
 			};
 			name = Debug;
 		};
-		089051F22BD9259200C5F6E2 /* Release */ = {
+		082440AB2BEA38A100842E87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -301,7 +316,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Journee/Preview Content\"";
-				DEVELOPMENT_TEAM = ZP4QTMB37S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -325,25 +339,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		089051DD2BD9259000C5F6E2 /* Build configuration list for PBXProject "Journee" */ = {
+		082440962BEA389F00842E87 /* Build configuration list for PBXProject "Journee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				089051EE2BD9259200C5F6E2 /* Debug */,
-				089051EF2BD9259200C5F6E2 /* Release */,
+				082440A72BEA38A100842E87 /* Debug */,
+				082440A82BEA38A100842E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		089051F02BD9259200C5F6E2 /* Build configuration list for PBXNativeTarget "Journee" */ = {
+		082440A92BEA38A100842E87 /* Build configuration list for PBXNativeTarget "Journee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				089051F12BD9259200C5F6E2 /* Debug */,
-				089051F22BD9259200C5F6E2 /* Release */,
+				082440AA2BEA38A100842E87 /* Debug */,
+				082440AB2BEA38A100842E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 089051DA2BD9259000C5F6E2 /* Project object */;
+	rootObject = 082440932BEA389F00842E87 /* Project object */;
 }

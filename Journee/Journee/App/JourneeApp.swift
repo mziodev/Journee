@@ -2,7 +2,7 @@
 //  JourneeApp.swift
 //  Journee
 //
-//  Created by Mauricio dSR on 24/4/24.
+//  Created by MZIO on 7/5/24.
 //
 
 import SwiftUI
