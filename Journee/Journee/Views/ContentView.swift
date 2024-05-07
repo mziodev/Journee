@@ -11,8 +11,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(1..<31) { log in
-                    Text("2024-04-\(31 - log)")
+                ForEach(journee, id: \.creationDate) { log in
+                    Text(
+                        log.creationDate.formatted(
+                            date: .abbreviated,
+                            time: .omitted
+                        )
+                    )
                 }
             }
             .navigationTitle("Journee")
