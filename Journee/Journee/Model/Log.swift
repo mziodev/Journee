@@ -11,9 +11,20 @@ struct Log {
     let creationDate: Date
     var modificationDate: Date
     var content: String
+    
+    init(creationDate: Date, modificationDate: Date, content: String) {
+        self.creationDate = creationDate
+        self.modificationDate = modificationDate
+        self.content = """
+        \(creationDate.formatted(date: .abbreviated, time: .omitted))
+        
+        \(content)
+        """
+    }
 }
 
-let journee = [
+
+var journee = [
     Log(creationDate: .now - (86400 * 3),
         modificationDate: .now - (86400 * 3),
         content: "This is my first entry for the Journee app, what do you think?"),

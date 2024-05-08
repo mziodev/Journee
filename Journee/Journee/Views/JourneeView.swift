@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct JourneeView: View {
     var body: some View {
         NavigationStack {
             List {
                 ForEach(journee, id: \.creationDate) { log in
-                    NavigationLink(destination: Text(log.content)) {
+                    NavigationLink(destination: LogView(log: log)) {
                         LogRowView(log: log)
                     }
                 }
@@ -23,5 +23,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    JourneeView()
 }
