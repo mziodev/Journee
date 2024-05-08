@@ -30,17 +30,17 @@ struct JourneeView: View {
                 LogView(log: newLog)
             }
             .toolbar {
-                ToolbarItem(placement: .status) {
-                    Text("\(journee.count) entries")
-                        .font(.caption)
-                }
-                
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         showingNewLogView = true
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
+                }
+                
+                ToolbarItem(placement: .status) {
+                    Text("\(journee.count) entries")
+                        .font(.caption)
                 }
             }
             .toolbarBackground(.visible, for: .bottomBar)
