@@ -18,6 +18,7 @@ struct JourneeView: View {
                         LogRowView(log: log)
                     }
                 }
+                .onDelete(perform: deleteLogs)
             }
             .navigationTitle("Journee")
             .navigationDestination(isPresented: $showingNewLogView) {
@@ -30,7 +31,11 @@ struct JourneeView: View {
                 LogView(log: newLog)
             }
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .bottomBar) {
                     Button {
                         showingNewLogView = true
                     } label: {
@@ -44,6 +49,12 @@ struct JourneeView: View {
                 }
             }
             .toolbarBackground(.visible, for: .bottomBar)
+        }
+    }
+    
+    func deleteLogs(at offSets: IndexSet) {
+        for offSet in offSets {
+            // delete Log action
         }
     }
 }
