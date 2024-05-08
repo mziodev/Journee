@@ -11,7 +11,18 @@ struct LogView: View {
     @State var log: Log
     
     var body: some View {
-        TextEditor(text: $log.content)
+        NavigationStack {
+            TextEditor(text: $log.content)
+                .ignoresSafeArea()
+                .padding(.horizontal)
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Ok") {
+                            // save actions
+                        }
+                    }
+                }
+        }
     }
 
 }

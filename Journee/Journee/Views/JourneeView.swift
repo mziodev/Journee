@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct JourneeView: View {
+    @State private var showingNewLogView = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -18,7 +20,15 @@ struct JourneeView: View {
                 }
             }
             .navigationTitle("Journee")
-            .toolbarBackground(.visible, for: .bottomBar)
+            .navigationDestination(isPresented: $showingNewLogView) {
+                let newLog = Log(
+                    creationDate: .now,
+                    modificationDate: .now,
+                    content: ""
+                )
+                
+                LogView(log: newLog)
+            }
             .toolbar {
                 ToolbarItem(placement: .status) {
                     Text("\(journee.count) entries")
@@ -27,12 +37,13 @@ struct JourneeView: View {
                 
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        
+                        showingNewLogView = true
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
                 }
             }
+            .toolbarBackground(.visible, for: .bottomBar)
         }
     }
 }
