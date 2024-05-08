@@ -18,6 +18,21 @@ struct JourneeView: View {
                 }
             }
             .navigationTitle("Journee")
+            .toolbarBackground(.visible, for: .bottomBar)
+            .toolbar {
+                ToolbarItem(placement: .status) {
+                    Text("\(journee.count) entries")
+                        .font(.caption)
+                }
+                
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+            }
         }
     }
 }
