@@ -16,7 +16,7 @@ struct LogRowView: View {
                 Text(log.creationDate.formatted(date: .abbreviated, time: .omitted))
                     .font(.headline)
                 
-                Text(String(log.content.components(separatedBy: "\n")[2]))
+                Text(Log.trimDate(on: log.content))
                     .lineLimit(1)
                     .font(.subheadline)
             }

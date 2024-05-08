@@ -17,7 +17,13 @@ struct LogView: View {
                 .ignoresSafeArea()
                 .padding(.horizontal)
                 .focused($focusedTextEdit)
-                .onAppear { focusedTextEdit = false }
+                .onAppear {
+                    if Log.trimDate(on: log.content) == "" {
+                        focusedTextEdit = true
+                    } else {
+                        focusedTextEdit = false
+                    }
+                }
                 .toolbar {
                     if focusedTextEdit {
                         ToolbarItem(placement: .primaryAction) {
@@ -28,8 +34,8 @@ struct LogView: View {
                     }
                 }
         }
+        
     }
-
 }
 
 #Preview {

@@ -21,6 +21,10 @@ struct Log {
         \(content)
         """
     }
+    
+    static func trimDate(on content: String) -> String {
+        return String(content.components(separatedBy: "\n")[2])
+    }
 }
 
 
