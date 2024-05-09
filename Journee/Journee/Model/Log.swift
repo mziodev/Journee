@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Log {
+@Model
+class Log {
     let creationDate: Date
     var modificationDate: Date
     var content: String

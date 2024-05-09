@@ -5,12 +5,17 @@
 //  Created by MZIO on 7/5/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct LogView: View {
-    @State var log: Log
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
+
     @FocusState var focusedTextEdit: Bool
     
+    @State var log: Log
+        
     var body: some View {
         NavigationStack {
             TextEditor(text: $log.content)
@@ -24,17 +29,28 @@ struct LogView: View {
                         focusedTextEdit = false
                     }
                 }
+                .onDisappear {
+                    saveLog(log)
+                }
                 .toolbar {
                     if focusedTextEdit {
                         ToolbarItem(placement: .primaryAction) {
                             Button("Ok") {
-                                // save actions
+                                saveLog(log)
+                                
+                                focusedTextEdit = false
                             }
                         }
                     }
                 }
         }
         
+    }
+    
+    func saveLog(_ log: Log) {
+        if Log.trimDate(on: log.content) != "" {
+            modelContext.insert(log)
+        }
     }
 }
 

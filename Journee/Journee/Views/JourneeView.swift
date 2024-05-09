@@ -5,15 +5,24 @@
 //  Created by MZIO on 7/5/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct JourneeView: View {
+    @Environment(\.modelContext) var modelContext
+    
+    @Query(
+        sort: \Log.creationDate,
+        order: .reverse,
+        animation: .easeInOut
+    ) private var allLogs: [Log]
+    
     @State private var showingNewLogView = false
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(journee, id: \.creationDate) { log in
+                ForEach(allLogs, id: \.creationDate) { log in
                     NavigationLink(destination: LogView(log: log)) {
                         LogRowView(log: log)
                     }
@@ -44,7 +53,7 @@ struct JourneeView: View {
                 }
                 
                 ToolbarItem(placement: .status) {
-                    Text("\(journee.count) entries")
+                    Text("\(allLogs.count) entries")
                         .font(.caption)
                 }
             }
@@ -54,7 +63,9 @@ struct JourneeView: View {
     
     func deleteLogs(at offSets: IndexSet) {
         for offSet in offSets {
-            // delete Log action
+            let log = allLogs[offSet]
+            
+            modelContext.delete(log)
         }
     }
 }
