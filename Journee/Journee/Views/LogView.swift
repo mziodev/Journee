@@ -27,11 +27,7 @@ struct LogView: View {
                 .onAppear {
                     oldLogContent = Log.trimDate(on: log.content)
                     
-                    if oldLogContent == "" {
-                        focusedTextEdit = true
-                    } else {
-                        focusedTextEdit = false
-                    }
+                    changeTextEditorFocus()
                 }
                 .onDisappear {
                     saveLog(log)
@@ -55,6 +51,14 @@ struct LogView: View {
                 }
         }
         
+    }
+    
+    func changeTextEditorFocus() {
+        if oldLogContent == "" {
+            focusedTextEdit = true
+        } else {
+            focusedTextEdit = false
+        }
     }
     
     func saveLog(_ log: Log) {
