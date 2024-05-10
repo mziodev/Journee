@@ -9,12 +9,12 @@ import SwiftData
 import SwiftUI
 
 struct LogView: View {
-    @Environment(\.modelContext) var modelContext
-    @Environment(\.dismiss) var dismiss
-
     @FocusState var focusedTextEdit: Bool
     
     @State var log: Log
+
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
         
     var body: some View {
         NavigationStack {
@@ -42,6 +42,12 @@ struct LogView: View {
                             }
                         }
                     }
+                    
+                    ToolbarItem(placement: .status) {
+                        Text("\(log.modificationDate.formatted(date: .long, time: .shortened))")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
                 }
         }
         
@@ -49,11 +55,23 @@ struct LogView: View {
     
     func saveLog(_ log: Log) {
         if Log.trimDate(on: log.content) != "" {
+            if focusedTextEdit {
+                log.modificationDate = .now
+            }
+            
             modelContext.insert(log)
         }
     }
 }
 
 #Preview {
-    LogView(log: journee[0])
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Log.self, configurations: config)
+        
+        return LogView(log: SampleJournee.allLogs[3])
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }

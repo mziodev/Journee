@@ -14,6 +14,6 @@ struct JourneeApp: App {
         WindowGroup {
             JourneeView()
         }
-        .modelContainer(for: Log.self)
+        .modelContainer(previewContainer)
     }
 }

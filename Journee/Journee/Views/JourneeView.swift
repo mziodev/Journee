@@ -9,13 +9,13 @@ import SwiftData
 import SwiftUI
 
 struct JourneeView: View {
-    @Environment(\.modelContext) var modelContext
-    
     @Query(
         sort: \Log.creationDate,
         order: .reverse,
         animation: .easeInOut
     ) private var allLogs: [Log]
+    
+    @Environment(\.modelContext) var modelContext
     
     @State private var showingNewLogView = false
     
@@ -72,4 +72,5 @@ struct JourneeView: View {
 
 #Preview {
     JourneeView()
+        .modelContainer(previewContainer)
 }

@@ -5,6 +5,7 @@
 //  Created by MZIO on 7/5/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct LogRowView: View {
@@ -27,6 +28,13 @@ struct LogRowView: View {
 }
 
 #Preview {
-    LogRowView(log: journee[0])
-        .padding()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Log.self, configurations: config)
+        
+        return LogRowView(log: SampleJournee.allLogs[3])
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
