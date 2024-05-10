@@ -12,6 +12,8 @@ struct LogView: View {
     @FocusState var focusedTextEdit: Bool
     
     @State var log: Log
+    
+    @State private var oldLogContent: String = ""
 
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
@@ -23,7 +25,9 @@ struct LogView: View {
                 .padding(.horizontal)
                 .focused($focusedTextEdit)
                 .onAppear {
-                    if Log.trimDate(on: log.content) == "" {
+                    oldLogContent = Log.trimDate(on: log.content)
+                    
+                    if oldLogContent == "" {
                         focusedTextEdit = true
                     } else {
                         focusedTextEdit = false
@@ -54,12 +58,15 @@ struct LogView: View {
     }
     
     func saveLog(_ log: Log) {
-        if Log.trimDate(on: log.content) != "" {
-            if focusedTextEdit {
+        let newLogContent = Log.trimDate(on: log.content)
+        
+        if newLogContent != "" {
+            if newLogContent != oldLogContent {
                 log.modificationDate = .now
+                
+                modelContext.insert(log)
             }
             
-            modelContext.insert(log)
         }
     }
 }
