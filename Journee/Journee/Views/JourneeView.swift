@@ -44,17 +44,16 @@ struct JourneeView: View {
                     EditButton()
                 }
                 
-                ToolbarItem(placement: .bottomBar) {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    Text("\(allLogs.count) entries")
+                        .font(.caption)
+                    Spacer()
                     Button {
                         showingNewLogView = true
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
-                }
-                
-                ToolbarItem(placement: .status) {
-                    Text("\(allLogs.count) entries")
-                        .font(.caption)
                 }
             }
             .toolbarBackground(.visible, for: .bottomBar)
