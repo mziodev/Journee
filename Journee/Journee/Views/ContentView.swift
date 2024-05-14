@@ -8,12 +8,48 @@
 import SwiftData
 import SwiftUI
 
-struct JourneeView: View {
+struct ContentView: View {
     @Query(
         sort: \Log.creationDate,
-        order: .reverse,
-        animation: .easeInOut
+        order: .reverse
     ) private var allLogs: [Log]
+    
+    
+    /*
+     This is a second Query for this view, it's a filtered-predicate one but I need to compare the dates without the time part
+     
+     Watch this link out (dynamic queries): https://www.hackingwithswift.com/quick-start/swiftdata/filtering-the-results-from-a-swiftdata-query
+     
+     AI responded this (it's interesting for the Date extension):
+     
+     struct MyView: View {
+         @Query(Person.self, where: { $0.createdAt?.dateOnly == Date.now.dateOnly }) var peopleCreatedToday: [Person]
+
+         var body: some View {
+             VStack {
+                 // Display people created today
+                 ForEach(peopleCreatedToday) { person in
+                     Text(person.name)
+                 }
+             }
+         }
+     }
+
+     extension Date {
+         var dateOnly: Date {
+             let calendar = Calendar.current
+             let components = calendar.dateComponents([.year, .month, .day], from: self)
+             return calendar.date(from: components) ?? self
+         }
+     }
+
+    */
+    
+    static var today: Date {
+        Date.now
+    }
+    
+    @Query(filter: #Predicate<Log> { $0.creationDate == today }) var todayLogs: [Log]
     
     @Environment(\.modelContext) var modelContext
     
@@ -50,6 +86,7 @@ struct JourneeView: View {
                         .font(.caption)
                     Spacer()
                     Button {
+                        if allLogs.count > 0 { }
                         showingNewLogView = true
                     } label: {
                         Image(systemName: "square.and.pencil")
@@ -70,6 +107,6 @@ struct JourneeView: View {
 }
 
 #Preview {
-    JourneeView()
-        .modelContainer(previewContainer)
+    ContentView()
+        .modelContainer(SampleData.shared.modelContainer)
 }

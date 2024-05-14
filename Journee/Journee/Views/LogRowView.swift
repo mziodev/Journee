@@ -28,13 +28,6 @@ struct LogRowView: View {
 }
 
 #Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Log.self, configurations: config)
-        
-        return LogRowView(log: SampleJournee.allLogs[3])
-            .modelContainer(container)
-    } catch {
-        return Text("Failed to create preview: \(error.localizedDescription)")
-    }
+    LogRowView(log: SampleData.shared.log)
+        .padding()
 }

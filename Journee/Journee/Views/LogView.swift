@@ -76,13 +76,5 @@ struct LogView: View {
 }
 
 #Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Log.self, configurations: config)
-        
-        return LogView(log: SampleJournee.allLogs[3])
-            .modelContainer(container)
-    } catch {
-        return Text("Failed to create preview: \(error.localizedDescription)")
-    }
+    LogView(log: SampleData.shared.log)
 }
