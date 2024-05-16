@@ -17,7 +17,7 @@ struct LogRowView: View {
                 Text(log.creationDate.shortDateOnly)
                     .font(.headline)
                 
-                Text(Log.trimDate(on: log.content))
+                Text(log.content)
                     .lineLimit(1)
                     .font(.subheadline)
             }

@@ -22,10 +22,13 @@ struct LogView: View {
         NavigationStack {
             TextEditor(text: $log.content)
                 .ignoresSafeArea()
-                .padding(.horizontal)
+                .padding()
                 .focused($focusedTextEdit)
+                .navigationTitle(log.creationDate.completeDateOnly)
+                .navigationBarTitleDisplayMode(log.content.isEmpty ? .inline : .large)
+                .navigationTitleToHeadline()
                 .onAppear {
-                    oldLogContent = Log.trimDate(on: log.content)
+                    oldLogContent = log.content
                     
                     changeTextEditorFocus()
                 }
@@ -44,13 +47,12 @@ struct LogView: View {
                     }
                     
                     ToolbarItem(placement: .status) {
-                        Text("\(log.modificationDate.formatted(date: .long, time: .shortened))")
+                        Text("\(log.modificationDate.longDateShorTime)")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
                 }
         }
-        
     }
     
     func changeTextEditorFocus() {
@@ -62,16 +64,24 @@ struct LogView: View {
     }
     
     func saveLog(_ log: Log) {
-        let newLogContent = Log.trimDate(on: log.content)
-        
-        if newLogContent != "" {
-            if newLogContent != oldLogContent {
+        if log.content != "" {
+            if log.content != oldLogContent {
                 log.modificationDate = .now
                 
                 modelContext.insert(log)
             }
             
         }
+    }
+}
+
+extension View {
+    func navigationTitleToHeadline() -> some View {
+        let font = UIFont(descriptor: .preferredFontDescriptor(withTextStyle: .headline), size: 20)
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font: font]
+        
+        return self
     }
 }
 

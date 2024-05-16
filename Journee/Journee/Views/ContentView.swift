@@ -58,7 +58,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(allLogs, id: \.creationDate) { log in
+                ForEach(allLogs) { log in
                     NavigationLink(destination: LogView(log: log)) {
                         LogRowView(log: log)
                     }

@@ -17,11 +17,7 @@ class Log {
     init(creationDate: Date, modificationDate: Date, content: String) {
         self.creationDate = creationDate
         self.modificationDate = modificationDate
-        self.content = """
-        \(creationDate.completeDateOnly)
-        
-        \(content)
-        """
+        self.content = content
     }
     
     static func trimDate(on content: String) -> String {
@@ -49,5 +45,9 @@ extension Date {
     
     var shortDateOnly: String {
         self.formatted(date: .abbreviated, time: .omitted)
+    }
+    
+    var longDateShorTime: String {
+        self.formatted(date: .long, time: .shortened)
     }
 }
