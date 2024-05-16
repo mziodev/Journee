@@ -14,7 +14,7 @@ struct LogRowView: View {
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
-                Text(log.creationDate.formatted(date: .abbreviated, time: .omitted))
+                Text(log.creationDate.shortDateOnly)
                     .font(.headline)
                 
                 Text(Log.trimDate(on: log.content))

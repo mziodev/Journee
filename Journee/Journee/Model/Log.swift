@@ -18,7 +18,7 @@ class Log {
         self.creationDate = creationDate
         self.modificationDate = modificationDate
         self.content = """
-        \(creationDate.formatted(date: .abbreviated, time: .omitted))
+        \(creationDate.completeDateOnly)
         
         \(content)
         """
@@ -40,4 +40,14 @@ class Log {
         Log(creationDate: .now,
             modificationDate: .now, content: "This is my fourth entry for the Journee app. This is been a great experience so far 😍")
     ]
+}
+
+extension Date {
+    var completeDateOnly: String {
+        self.formatted(date: .complete, time: .omitted)
+    }
+    
+    var shortDateOnly: String {
+        self.formatted(date: .abbreviated, time: .omitted)
+    }
 }
