@@ -2,7 +2,7 @@
 //  SampleData.swift
 //  Journee
 //
-//  Created by MZIO on 14/5/24.
+//  Created by MZiO on 14/5/24.
 //
 
 import Foundation

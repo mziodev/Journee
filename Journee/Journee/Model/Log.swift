@@ -2,7 +2,7 @@
 //  Log.swift
 //  Journee
 //
-//  Created by MZIO on 7/5/24.
+//  Created by MZiO on 7/5/24.
 //
 
 import Foundation
